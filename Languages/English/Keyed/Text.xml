@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<ItemQualityOptions>Item Quality Options</ItemQualityOptions>
+
+	<VanillaQuality>Vanilla quality</VanillaQuality>
+	<TheRimWorldDefault>Item quality is determined by the default RimWorld algorithm.</TheRimWorldDefault>
+
+	<StaticQuality>Static quality</StaticQuality>
+	<ItemQualityIs>Item quality is based purely on Pawn skill level.</ItemQualityIs>
+
+	<StaticQuality1>Static quality +/- 1</StaticQuality1>
+	<ItemQualityIs1>Item quality is based on Pawn skill level +/- 1 quality level.</ItemQualityIs1>
+
+	<StaticQuality2>Static quality +/- 2</StaticQuality2>
+	<ItemQualityIs2>Item quality is based on Pawn skill level +/- 2 quality levels.</ItemQualityIs2>
+
+	<CraftingNotification>Crafting notifications</CraftingNotification>
+	<CraftingEnabled>Whether or not crafting notifications on Masterwork/Legendary items is enabled.</CraftingEnabled>
+
+	<LegendaryOnlyWithInspiration>Legendary Requires Inspiration</LegendaryOnlyWithInspiration>
+	<LegendaryWithInspirationEnabled>Whether or not Legendary items can only be created with inspiration.</LegendaryWithInspirationEnabled>
+</LanguageData>
