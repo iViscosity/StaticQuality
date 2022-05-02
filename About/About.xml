@@ -13,6 +13,7 @@ This is a stripped down version of ZLJ's "Static Quality Plus" converted to be u
 
 Should be compatible with pretty much any other mod. See Steam description for more info.
 	</description>
+	<url>https://steamcommunity.com/sharedfiles/filedetails/?id=2801204005</url>
 	<modDependencies>
 		<li>
 			<packageId>brrainz.harmony</packageId>
