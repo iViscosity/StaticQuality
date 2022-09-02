@@ -14,6 +14,9 @@
 	<StaticQuality2>Static quality +/- 2</StaticQuality2>
 	<ItemQualityIs2>Item quality is based on Pawn skill level +/- 2 quality levels.</ItemQualityIs2>
 
+	<CheatQuality>Cheat Quality</CheatQuality>
+	<CheatQualityIs>Item quality is always Legendary. Ignores Inspiration settings.</CheatQualityIs>
+
 	<CraftingNotification>Crafting notifications</CraftingNotification>
 	<CraftingEnabled>Whether or not crafting notifications on Masterwork/Legendary items is enabled.</CraftingEnabled>
 

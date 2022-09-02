@@ -23,25 +23,28 @@ namespace StaticQualityPlus
 {
     public class Settings : ModSettings
     {
-        public int QualitySwitch = 0;
+        public int QualitySwitch = 3;
         public bool CraftNotify = false;
         public bool LegendaryRequiresInspiration = true;
 
         public void DoWindowContents(Rect canvas)
         {
-            Listing_Standard options = new Listing_Standard();
-            options.ColumnWidth = 250f;
-            options.Begin(canvas);
+			Listing_Standard options = new Listing_Standard
+			{
+				ColumnWidth = 250f
+			};
+			options.Begin(canvas);
 
             options.Label(Translator.Translate("ItemQualityOptions"));
             options.Gap(12f);
 
-            bool[] qs = new bool[4];
+            bool[] qs = new bool[5];
             
             qs[0] = options.RadioButton(Translator.Translate("VanillaQuality"), (QualitySwitch == 0), 0f, Translator.Translate("TheRimWorldDefault"));
             qs[1] = options.RadioButton(Translator.Translate("StaticQuality"), (QualitySwitch == 1), 0f, Translator.Translate("ItemQualityIs"));
             qs[2] = options.RadioButton(Translator.Translate("StaticQuality1"), (QualitySwitch == 2), 0f, Translator.Translate("ItemQualityIs1"));
             qs[3] = options.RadioButton(Translator.Translate("StaticQuality2"), (QualitySwitch == 3), 0f, Translator.Translate("ItemQualityIs2"));
+			qs[4] = options.RadioButton(Translator.Translate("CheatQuality"), (QualitySwitch == 4), 0f, Translator.Translate("CheatQualityIs"));
             options.Gap(24f);
 
             string text_cn = Translator.Translate("CraftingNotification");

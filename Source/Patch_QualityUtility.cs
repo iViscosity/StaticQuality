@@ -28,6 +28,9 @@ namespace StaticQualityPlus
 	{
 		public static QualityCategory Postfix(QualityCategory __result, int relevantSkillLevel, bool inspired)
 		{
+			if (StaticQuality.Settings.QualitySwitch == 4)
+				return (QualityCategory)6;
+
 			if (StaticQuality.Settings.QualitySwitch > 1)
 			{
 				Random rng = new Random();
@@ -41,6 +44,9 @@ namespace StaticQualityPlus
 				{
 					mod = rng.Next(-1, 2);
 				}
+
+				if (inspired)
+					mod += 2;
 
 				int quality;
 
@@ -98,42 +104,61 @@ namespace StaticQualityPlus
 			}
 			else if (StaticQuality.Settings.QualitySwitch == 1)
 			{
+				int quality;
 				switch (relevantSkillLevel)
 				{
 					case 0:
 					case 1:
 					case 2:
-						return (QualityCategory)0;
+						quality = 0;
+						break;
 					case 3:
 					case 4:
 					case 5:
 					case 6:
-						return (QualityCategory)1;
+						quality = 1;
+						break;
 					case 7:
 					case 8:
 					case 9:
 					case 10:
-						return (QualityCategory)2;
+						quality = 2;
+						break;
 					case 11:
 					case 12:
 					case 13:
 					case 14:
-						return (QualityCategory)3;
+						quality = 3;
+						break;
 					case 15:
 					case 16:
 					case 17:
-						return (QualityCategory)4;
+						quality = 4;
+						break;
 					case 18:
 					case 19:
-						return (QualityCategory)5;
+						quality = 5;
+						break;
 					case 20:
-						if (!inspired && StaticQuality.Settings.LegendaryRequiresInspiration == true)
-							return (QualityCategory)5;
-						else
-							return (QualityCategory)6;
+						quality = 6;
+						break;
 					default:
-						return (QualityCategory)3;
+						quality = 3;
+						break;
 				}
+
+				if (inspired)
+					quality += 2;
+
+				if (quality < 0)
+					quality = 0;
+				else if (quality >= 6)
+					if (!inspired && StaticQuality.Settings.LegendaryRequiresInspiration)
+						quality = 5;
+					else
+						quality = 6;
+
+				return (QualityCategory)quality;
 			}
 
 			return __result;
