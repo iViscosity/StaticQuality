@@ -45,9 +45,6 @@ namespace StaticQualityPlus
 					mod = rng.Next(-1, 2);
 				}
 
-				if (inspired)
-					mod += 2;
-
 				int quality;
 
 				switch (relevantSkillLevel)
@@ -90,13 +87,16 @@ namespace StaticQualityPlus
 						break;
 				}
 
+				if (inspired)
+					quality += 2;
+
 				if (quality < 0)
 					quality = 0;
 				else if (quality > 6)
 					quality = 6;
 
 				if (quality == 6)
-					if (!inspired && StaticQuality.Settings.LegendaryRequiresInspiration)
+					if (StaticQuality.Settings.LegendaryRequiresInspiration && !inspired)
 						quality = 5;
 
 				return (QualityCategory)quality;
@@ -152,11 +152,12 @@ namespace StaticQualityPlus
 
 				if (quality < 0)
 					quality = 0;
-				else if (quality >= 6)
-					if (!inspired && StaticQuality.Settings.LegendaryRequiresInspiration)
+				else if (quality > 6)
+					quality = 6;
+
+				if (quality == 6)
+					if (StaticQuality.Settings.LegendaryRequiresInspiration && !inspired)
 						quality = 5;
-					else
-						quality = 6;
 
 				return (QualityCategory)quality;
 			}
