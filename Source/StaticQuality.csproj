@@ -63,8 +63,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(ProjectDir)..\1.3\Assemblies\StaticQuality.dll" "$(ProjectDir)\..\Assemblies\" /i /y
-xcopy "$(ProjectDir)..\1.3\Assemblies\0Harmony.dll" "$(ProjectDir)\..\Assemblies\" /i /y
-xcopy "$(ProjectDir)..\1.3\Assemblies\0Harmony.xml" "$(ProjectDir)\..\Assemblies\" /i /y</PostBuildEvent>
+    <PostBuildEvent>xcopy "$(TargetDir)StaticQuality.dll" "$(ProjectDir)..\Assemblies\" /i /y
+xcopy "$(TargetDir)0Harmony.dll" "$(ProjectDir)..\Assemblies\" /i /y
+xcopy "$(TargetDir)0Harmony.xml" "$(ProjectDir)..\Assemblies\" /i /y</PostBuildEvent>
   </PropertyGroup>
 </Project>
