@@ -29,7 +29,10 @@ namespace StaticQualityPlus
 		public static QualityCategory Postfix(QualityCategory __result, int relevantSkillLevel, bool inspired)
 		{
 			if (StaticQuality.Settings.QualitySwitch == 4)
-				return (QualityCategory)6;
+				if (StaticQuality.Settings.LegendaryRequiresInspiration)
+					return (QualityCategory)5;
+				else
+					return (QualityCategory)6;
 
 			if (StaticQuality.Settings.QualitySwitch > 1)
 			{
