@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<ItemQualityOptions>品质相关:</ItemQualityOptions>
+
+	<VanillaQuality>原版品质</VanillaQuality>
+	<TheRimWorldDefault>游戏默认</TheRimWorldDefault>
+
+	<StaticQuality>稳定品质</StaticQuality>
+	<ItemQualityIs>物品品质与制作者的技能水平息息相关</ItemQualityIs>
+
+	<StaticQuality1>上下浮动1级</StaticQuality1>
+	<ItemQualityIs1>物品品质与制作者的技能水平相关，会上下浮动一个等级</ItemQualityIs1>
+
+	<StaticQuality2>上下浮动2级</StaticQuality2>
+	<ItemQualityIs2>物品品质与制作者的技能水平相关，会上下浮动两个等级</ItemQualityIs2>
+
+	<CheatQuality>作弊品质</CheatQuality>
+	<CheatQualityIs>物品品质始终是传奇，依旧遵循“无灵感，不传奇”选项</CheatQualityIs>
+
+	<CraftingNotification>物品品质通知</CraftingNotification>
+	<CraftingEnabled>若禁用此项，制作出大师/传奇级的物品不会通知消息</CraftingEnabled>
+
+	<LegendaryOnlyWithInspiration>无灵感，不传奇</LegendaryOnlyWithInspiration>
+	<LegendaryWithInspirationEnabled>若启用此项，则仅有获得了"创造灵感"的角色才能制作出传奇级物品</LegendaryWithInspirationEnabled>
+</LanguageData>
