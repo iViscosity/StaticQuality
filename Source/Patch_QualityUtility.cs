@@ -24,22 +24,46 @@ using HarmonyLib;
 namespace StaticQualityPlus
 {
 	[HarmonyPatch(typeof(QualityUtility), nameof(QualityUtility.GenerateQualityCreatedByPawn), new Type[] { typeof(int), typeof(bool) })]
+	[HarmonyPriority(Priority.Last)]
 	class Patch_GenerateQualityCreatedByPawn
 	{
 		public static QualityCategory Postfix(QualityCategory __result, int relevantSkillLevel, bool inspired)
 		{
-			if (StaticQuality.Settings.QualitySwitch == 4)
-				if (StaticQuality.Settings.LegendaryRequiresInspiration)
+			if (Settings.QualitySwitch == 0) // Do nothing
+				return __result;
+
+			if (Settings.QualitySwitch == 4) // Cheat quality
+				if (Settings.LegendaryRequiresInspiration && !inspired) // Still respects Inspiration requirement.
 					return (QualityCategory)5;
 				else
 					return (QualityCategory)6;
 
-			if (StaticQuality.Settings.QualitySwitch > 1)
+			int quality = 0; // Default to "awful"
+			int mod = 0;
+
+			if (relevantSkillLevel >= Settings.LegendaryThreshold)
+			{
+				if (Settings.LegendaryRequiresInspiration && !inspired)
+					quality = 5;
+				else
+					quality = 6;
+			}
+			else if (relevantSkillLevel >= Settings.MasterworkThreshold)
+				quality = 5;
+			else if (relevantSkillLevel >= Settings.ExcellentThreshold)
+				quality = 4;
+			else if (relevantSkillLevel >= Settings.GoodThreshold)
+				quality = 3;
+			else if (relevantSkillLevel >= Settings.NormalThreshold)
+				quality = 2;
+			else if (relevantSkillLevel >= Settings.PoorThreshold)
+				quality = 1;
+			
+			if (Settings.QualitySwitch > 1)
 			{
 				Random rng = new Random();
-				int mod;
 
-				if (StaticQuality.Settings.QualitySwitch == 3)
+				if (Settings.QualitySwitch == 3)
 				{
 					mod = rng.Next(-2, 3);
 				}
@@ -47,123 +71,22 @@ namespace StaticQualityPlus
 				{
 					mod = rng.Next(-1, 2);
 				}
-
-				int quality;
-
-				switch (relevantSkillLevel)
-				{
-					case 0:
-					case 1:
-					case 2:
-					case 3:
-						quality = 0 + mod;
-						break;
-					case 4:
-					case 5:
-					case 6:
-					case 7:
-						quality = 1 + mod;
-						break;
-					case 8:
-					case 9:
-					case 10:
-					case 11:
-					case 12:
-					case 13:
-					case 14:
-						quality = 3 + mod;
-						break;
-					case 15:
-					case 16:
-					case 17:
-						quality = 4 + mod;
-						break;
-					case 18:
-					case 19:
-						quality = 5 + mod;
-						break;
-					case 20:
-						quality = 6 + mod;
-						break;
-					default:
-						quality = 3;
-						break;
-				}
-
-				if (inspired)
-					quality += 2;
-
-				if (quality < 0)
-					quality = 0;
-				else if (quality > 6)
-					quality = 6;
-
-				if (quality == 6)
-					if (StaticQuality.Settings.LegendaryRequiresInspiration && !inspired)
-						quality = 5;
-
-				return (QualityCategory)quality;
-
 			}
-			else if (StaticQuality.Settings.QualitySwitch == 1)
+
+			quality += mod;
+
+			if (quality < 0)
+				quality = 0;
+			else if (quality >= 6)
 			{
-				int quality;
-				switch (relevantSkillLevel)
-				{
-					case 0:
-					case 1:
-					case 2:
-						quality = 0;
-						break;
-					case 3:
-					case 4:
-					case 5:
-					case 6:
-						quality = 1;
-						break;
-					case 7:
-					case 8:
-					case 9:
-					case 10:
-						quality = 2;
-						break;
-					case 11:
-					case 12:
-					case 13:
-					case 14:
-						quality = 3;
-						break;
-					case 15:
-					case 16:
-					case 17:
-						quality = 4;
-						break;
-					case 18:
-					case 19:
-						quality = 5;
-						break;
-					case 20:
-						quality = 6;
-						break;
-					default:
-						quality = 3;
-						break;
-				}
-
-				if (inspired)
-					quality += 2;
-
-				if (quality < 0)
-					quality = 0;
-				else if (quality > 6)
+				if (Settings.LegendaryRequiresInspiration && !inspired)
+					quality = 5;
+				else
 					quality = 6;
-
-				if (quality == 6)
-					if (StaticQuality.Settings.LegendaryRequiresInspiration && !inspired)
-						quality = 5;
-
-				return (QualityCategory)quality;
 			}
+
+
+			__result = (QualityCategory)quality;
 
 			return __result;
 		}
@@ -172,6 +95,6 @@ namespace StaticQualityPlus
 	[HarmonyPatch(typeof(QualityUtility), nameof(QualityUtility.SendCraftNotification))]
 	class Path_SendCraftNotification
 	{
-		public static bool Prefix() => StaticQuality.Settings.CraftNotify;
+		public static bool Prefix() => Settings.CraftNotify;
 	}
 }

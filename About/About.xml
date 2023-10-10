@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>Static Quality Stripped</name>
+	<name>Static Quality</name>
 	<author>Vis</author>
 	<packageId>vis.StaticQuality</packageId>
 	<supportedVersions>
@@ -8,11 +8,9 @@
 		<li>1.4</li>
 	</supportedVersions>
 	<description>
-Version 0.1.3
+Version 0.1.4
 
-This is a stripped down version of ZLJ's "Static Quality Plus" converted to be used with Harmony. 
-
-Should be compatible with pretty much any other mod. See Steam description for more info.
+Makes crafting/building less random and more heavily influenced by Pawn skill. See Steam description for more info.
 	</description>
 	<url>https://steamcommunity.com/sharedfiles/filedetails/?id=2801204005</url>
 	<modDependencies>

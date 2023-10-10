@@ -28,18 +28,19 @@ namespace StaticQualityPlus
 
 		public StaticQuality(ModContentPack content) : base(content)
 		{
+			new Harmony("vis.rimworld.Static_Quality.main").PatchAll();
 			Settings = GetSettings<Settings>();
-#if DEBUG
-			Harmony.DEBUG = true;
-#endif
-			new Harmony("vis.rimworld.Static_Quality.main").PatchAll(); 
+		}
+
+		public void Save()
+		{
+			LoadedModManager.GetMod<StaticQuality>().GetSettings<Settings>().Write();
 		}
 
 		public override string SettingsCategory() => "Static Quality";
 
 		public override void DoSettingsWindowContents(Rect canvas)
 		{
-			base.DoSettingsWindowContents(canvas);
 			Settings.DoWindowContents(canvas);
 		}
 	}
