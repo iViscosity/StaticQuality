@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<ItemQualityOptions>品質相關：</ItemQualityOptions>
+
+	<VanillaQuality>原版品質</VanillaQuality>
+	<TheRimWorldDefault>遊戲預設</TheRimWorldDefault>
+
+	<StaticQuality>穩定品質</StaticQuality>
+	<ItemQualityIs>物品品質與製作者的技能水準息息相關</ItemQualityIs>
+
+	<StaticQuality1>上下浮動1級</StaticQuality1>
+	<ItemQualityIs1>物品品質與製作者的技能水平相關，會上下浮動一個等級</ItemQualityIs1>
+
+	<StaticQuality2>上下浮動2級</StaticQuality2>
+	<ItemQualityIs2>物品品質與製作者的技能水平相關，會上下浮動兩個等級</ItemQualityIs2>
+
+	<CheatQuality>作弊品質</CheatQuality>
+	<CheatQualityIs>物品品質始終是傳奇，依舊遵循「無靈感，不傳奇」選項</CheatQualityIs>
+
+	<CraftingNotification>物品品質通知</CraftingNotification>
+	<CraftingEnabled>若禁用此項，製作出大師/傳奇級的物品不會通知消息</CraftingEnabled>
+
+	<LegendaryOnlyWithInspiration>無靈感，不傳奇</LegendaryOnlyWithInspiration>
+	<LegendaryWithInspirationEnabled>若啟用此項，則僅有獲得了「創造靈感」的角色才能製作出傳奇級物品</LegendaryWithInspirationEnabled>
+</LanguageData>
