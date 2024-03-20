@@ -1,0 +1,42 @@
+C:\Users\ivisc\Desktop\1.3\Assemblies\StaticQuality.dll
+C:\Users\ivisc\Desktop\1.3\Assemblies\StaticQuality.pdb
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\obj\Debug\StaticQuality.csproj.AssemblyReference.cache
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\obj\Debug\StaticQuality.csproj.CoreCompileInputs.cache
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\obj\Debug\StaticQuality.csproj.CopyComplete
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\obj\Debug\StaticQuality.dll
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\obj\Debug\StaticQuality.pdb
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\Assemblies\StaticQuality.dll
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\Assemblies\StaticQuality.pdb
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\Assemblies\0Harmony.dll
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\Assemblies\Assembly-CSharp.dll
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\Assemblies\UnityEngine.CoreModule.dll
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\Assemblies\NAudio.dll
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\Assemblies\NVorbis.dll
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\Assemblies\UnityEngine.AudioModule.dll
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\Assemblies\UnityEngine.IMGUIModule.dll
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\Assemblies\Assembly-CSharp-firstpass.dll
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\Assemblies\UnityEngine.AssetBundleModule.dll
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\Assemblies\UnityEngine.TextRenderingModule.dll
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\Assemblies\UnityEngine.PhysicsModule.dll
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\Assemblies\Unity.TextMeshPro.dll
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\Assemblies\ISharpZipLib.dll
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\Assemblies\UnityEngine.InputLegacyModule.dll
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\Assemblies\UnityEngine.PerformanceReportingModule.dll
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\Assemblies\UnityEngine.ImageConversionModule.dll
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\Assemblies\UnityEngine.ScreenCaptureModule.dll
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\Assemblies\UnityEngine.UI.dll
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\Assemblies\UnityEngine.SharedInternalsModule.dll
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\Assemblies\UnityEngine.TextCoreModule.dll
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\Assemblies\UnityEngine.UIModule.dll
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\Assemblies\UnityEngine.Physics2DModule.dll
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\Assemblies\UnityEngine.AnimationModule.dll
+C:\Users\ivisc\Desktop\SQP_Harmony_Rewrite\ClassLibrary1\Assemblies\0Harmony.xml
+D:\Games\Steam\steamapps\common\RimWorld\Mods\Assemblies\StaticQuality.dll
+D:\Games\Steam\steamapps\common\RimWorld\Mods\Assemblies\StaticQuality.pdb
+D:\Games\Steam\steamapps\common\RimWorld\Mods\Static Quality\Assemblies\StaticQuality.dll
+D:\Games\Steam\steamapps\common\RimWorld\Mods\Static Quality\Assemblies\StaticQuality.pdb
+D:\Games\Steam\steamapps\common\RimWorld\Mods\Static Quality\Source\obj\Debug\StaticQuality.csproj.CoreCompileInputs.cache
+D:\Games\Steam\steamapps\common\RimWorld\Mods\Static Quality\Source\obj\Debug\StaticQuality.dll
+D:\Games\Steam\steamapps\common\RimWorld\Mods\Static Quality\Source\obj\Debug\StaticQuality.pdb
+D:\Games\Steam\steamapps\common\RimWorld\Mods\Static Quality\Source\obj\Debug\StaticQuality.csproj.AssemblyReference.cache
+D:\Games\Steam\steamapps\common\RimWorld\Mods\Static Quality\Source\obj\Debug\StaticQuality.csproj.CopyComplete

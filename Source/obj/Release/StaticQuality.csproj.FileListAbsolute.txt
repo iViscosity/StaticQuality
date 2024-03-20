@@ -1,0 +1,14 @@
+D:\Games\Steam\steamapps\common\RimWorld\Mods\1.3\Assemblies\StaticQuality.dll
+D:\Games\Steam\steamapps\common\RimWorld\Mods\1.3\Assemblies\StaticQuality.pdb
+C:\Users\ivisc\Desktop\Rimworld Mods\Static Quality - Dev\1.3\Assemblies\StaticQuality.dll
+C:\Users\ivisc\Desktop\Rimworld Mods\Static Quality - Dev\Source\obj\Release\StaticQuality.csproj.AssemblyReference.cache
+C:\Users\ivisc\Desktop\Rimworld Mods\Static Quality - Dev\Source\obj\Release\StaticQuality.csproj.CoreCompileInputs.cache
+C:\Users\ivisc\Desktop\Rimworld Mods\Static Quality - Dev\Source\obj\Release\StaticQuality.csproj.CopyComplete
+C:\Users\ivisc\Desktop\Rimworld Mods\Static Quality - Dev\Source\obj\Release\StaticQuality.dll
+D:\Games\Steam\steamapps\common\RimWorld\Mods\Static Quality\1.3\Assemblies\StaticQuality.dll
+D:\Games\Steam\steamapps\common\RimWorld\Mods\Static Quality\1.4\Assemblies\StaticQuality.dll
+D:\Games\Steam\steamapps\common\RimWorld\Mods\Static Quality\Source\obj\Release\StaticQuality.csproj.AssemblyReference.cache
+D:\Games\Steam\steamapps\common\RimWorld\Mods\Static Quality\Source\obj\Release\StaticQuality.csproj.CoreCompileInputs.cache
+D:\Games\Steam\steamapps\common\RimWorld\Mods\Static Quality\Source\obj\Release\StaticQuality.csproj.CopyComplete
+D:\Games\Steam\steamapps\common\RimWorld\Mods\Static Quality\Source\obj\Release\StaticQuality.dll
+D:\Games\Steam\steamapps\common\RimWorld\Mods\Static Quality\1.5\Assemblies\StaticQuality.dll

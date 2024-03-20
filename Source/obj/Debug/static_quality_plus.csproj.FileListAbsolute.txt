@@ -1,0 +1,4 @@
+D:\games\Steam\SteamApps\common\RimWorld\Mods\static_quality_plus\Source\static_quality_plus\obj\Debug\static_quality_plus.csprojAssemblyReference.cache
+D:\games\Steam\SteamApps\common\RimWorld\Mods\static_quality_plus\v1.1\Assemblies\static_quality_plus.dll
+D:\games\Steam\SteamApps\common\RimWorld\Mods\static_quality_plus\Source\static_quality_plus\obj\Debug\static_quality_plus.dll
+D:\games\Steam\SteamApps\common\RimWorld\Mods\static_quality_plus\1.1\Assemblies\static_quality_plus.dll
