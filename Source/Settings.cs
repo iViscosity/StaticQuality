@@ -16,62 +16,117 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+using System;
 using UnityEngine;
 using Verse;
 
 namespace StaticQualityPlus
 {
-    public class Settings : ModSettings
-    {
-        public int QualitySwitch = 3;
-        public bool CraftNotify = false;
-        public bool LegendaryRequiresInspiration = true;
+	public class Settings : ModSettings
+	{
+		public static int QualitySwitch = 3;
 
-        public void DoWindowContents(Rect canvas)
-        {
-			Listing_Standard options = new Listing_Standard
+		public static int PoorThreshold = 3;
+		public static int NormalThreshold = 7;
+		public static int GoodThreshold = 11;
+		public static int ExcellentThreshold = 15;
+		public static int MasterworkThreshold = 18;
+		public static int LegendaryThreshold = 20;
+
+		public static bool CraftNotify = false;
+		public static bool LegendaryRequiresInspiration = true;
+
+		public void DoWindowContents(Rect canvas)
+		{
+			Listing_Standard options = new Listing_Standard()
 			{
-				ColumnWidth = 250f
+				ColumnWidth = (canvas.width - 17) / 2
 			};
 			options.Begin(canvas);
 
-            options.Label(Translator.Translate("ItemQualityOptions"));
-            options.Gap(12f);
+			Text.Font = GameFont.Medium;
+			options.Label("STAQ.ItemQualityOptions".Translate());
+			Text.Font = GameFont.Small;
 
-            bool[] qs = new bool[5];
-            
-            qs[0] = options.RadioButton(Translator.Translate("VanillaQuality"), (QualitySwitch == 0), 0f, Translator.Translate("TheRimWorldDefault"));
-            qs[1] = options.RadioButton(Translator.Translate("StaticQuality"), (QualitySwitch == 1), 0f, Translator.Translate("ItemQualityIs"));
-            qs[2] = options.RadioButton(Translator.Translate("StaticQuality1"), (QualitySwitch == 2), 0f, Translator.Translate("ItemQualityIs1"));
-            qs[3] = options.RadioButton(Translator.Translate("StaticQuality2"), (QualitySwitch == 3), 0f, Translator.Translate("ItemQualityIs2"));
-			qs[4] = options.RadioButton(Translator.Translate("CheatQuality"), (QualitySwitch == 4), 0f, Translator.Translate("CheatQualityIs"));
-            options.Gap(24f);
+			bool[] qs = new bool[5];
 
-            string text_cn = Translator.Translate("CraftingNotification");
-            options.CheckboxLabeled(text_cn, ref CraftNotify, Translator.Translate("CraftingEnabled"));
-            options.Gap(12f);
+			qs[0] = options.RadioButton("STAQ.VanillaQuality".Translate(), (QualitySwitch == 0), tooltip: "STAQ.TheRimWorldDefault".Translate());
+			qs[1] = options.RadioButton("STAQ.StaticQuality".Translate(), (QualitySwitch == 1), tooltip: "STAQ.ItemQualityIs".Translate());
+			qs[2] = options.RadioButton("STAQ.StaticQuality1".Translate(), (QualitySwitch == 2), tooltip: "STAQ.ItemQualityIs1".Translate());
+			qs[3] = options.RadioButton("STAQ.StaticQuality2".Translate(), (QualitySwitch == 3), tooltip: "STAQ.ItemQualityIs2".Translate());
+			qs[4] = options.RadioButton("STAQ.CheatQuality".Translate(), (QualitySwitch == 4), tooltip: "STAQ.CheatQualityIs".Translate());
 
-            string text_li = Translator.Translate("LegendaryOnlyWithInspiration");
-            options.CheckboxLabeled(text_li, ref LegendaryRequiresInspiration, Translator.Translate("LegendaryWithInspirationEnabled"));
-            options.Gap(12f);
+			options.GapLine();
+			Text.Font = GameFont.Medium;
+			options.Label("STAQ.MiscellaneousSettingsLabel".Translate()); // Header
+			Text.Font = GameFont.Small;
+			string text_cn = "STAQ.CraftingNotification".Translate();
+			options.CheckboxLabeled(text_cn, ref CraftNotify, "STAQ.CraftingEnabled".Translate());
 
-            for (int i = 0; i < (qs.Length); ++i)
-            {
-                if (qs[i])
-                {
-                    QualitySwitch = i;
-                    break;
-                }
-            }
+			string text_li = "STAQ.LegendaryOnlyWithInspiration".Translate();
+			options.CheckboxLabeled(text_li, ref LegendaryRequiresInspiration, "STAQ.LegendaryWithInspirationEnabled".Translate());
 
-            options.End();
-        }
+			options.GapLine();
+			if (options.ButtonText("STAQ.Reset".Translate()))
+			{
+				QualitySwitch = 3;
 
-        public override void ExposeData()
-        {
-            Scribe_Values.Look<int>(ref QualitySwitch, "quality_switch", 1, true);
-            Scribe_Values.Look<bool>(ref CraftNotify, "craft_notify", true, true);
-            Scribe_Values.Look<bool>(ref LegendaryRequiresInspiration, "leg_in", false, true);
-        }
-    }
+				PoorThreshold = 3;
+				NormalThreshold = 7;
+				GoodThreshold = 11;
+				ExcellentThreshold = 15;
+				MasterworkThreshold = 18;
+				LegendaryThreshold = 20;
+
+				CraftNotify = false;
+				LegendaryRequiresInspiration = true;
+			}
+
+			options.NewColumn();
+			Text.Font = GameFont.Medium;
+			options.Label("STAQ.ThresholdSettings".Translate()); // Header
+			Text.Font = GameFont.Small;
+
+			options.Label("STAQ.RequiredStatPoor".Translate(PoorThreshold.ToString()));
+			PoorThreshold = (int)options.Slider(PoorThreshold, 0, NormalThreshold - 1);
+			options.Label("STAQ.RequiredStatNormal".Translate(NormalThreshold.ToString()));
+			NormalThreshold = (int)options.Slider(NormalThreshold, PoorThreshold + 1, GoodThreshold - 1);
+			options.Label("STAQ.RequiredStatGood".Translate(GoodThreshold.ToString()));
+			GoodThreshold = (int)options.Slider(GoodThreshold, NormalThreshold + 1, ExcellentThreshold - 1);
+			options.Label("STAQ.RequiredStatExcellent".Translate(ExcellentThreshold.ToString()));
+			ExcellentThreshold = (int)options.Slider(ExcellentThreshold, GoodThreshold + 1, MasterworkThreshold - 1);
+			options.Label("STAQ.RequiredStatMasterwork".Translate(MasterworkThreshold.ToString()));
+			MasterworkThreshold = (int)options.Slider(MasterworkThreshold, ExcellentThreshold + 1, LegendaryThreshold - 1);
+			options.Label("STAQ.RequiredStatLegendary".Translate(LegendaryThreshold.ToString()));
+			LegendaryThreshold = (int)options.Slider(LegendaryThreshold, MasterworkThreshold + 1, 20);
+
+			for (int i = 0; i < (qs.Length); ++i)
+			{
+				if (qs[i])
+				{
+					QualitySwitch = i;
+					break;
+				}
+			}
+
+			options.End();
+		}
+
+		public override void ExposeData()
+		{
+			base.ExposeData();
+			Scribe_Values.Look(ref QualitySwitch, "quality_switch", 1, false);
+
+			Scribe_Values.Look(ref PoorThreshold, "poor_threshold", 3, false);
+			Scribe_Values.Look(ref NormalThreshold, "normal_threshold", 7, false);
+			Scribe_Values.Look(ref GoodThreshold, "good_threshold", 11, false);
+			Scribe_Values.Look(ref ExcellentThreshold, "excellent_threshold", 15, false);
+			Scribe_Values.Look(ref MasterworkThreshold, "masterwork_threshold", 18, false);
+			Scribe_Values.Look(ref LegendaryThreshold, "legendary_threshold", 20, false);
+
+			Scribe_Values.Look(ref CraftNotify, "craft_notify", true, false);
+
+			Scribe_Values.Look(ref LegendaryRequiresInspiration, "legendary_inspiration", false, false);
+		}
+	}
 }
