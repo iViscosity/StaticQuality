@@ -12,3 +12,4 @@ D:\Games\Steam\steamapps\common\RimWorld\Mods\Static Quality\Source\obj\Release\
 D:\Games\Steam\steamapps\common\RimWorld\Mods\Static Quality\Source\obj\Release\StaticQuality.csproj.CopyComplete
 D:\Games\Steam\steamapps\common\RimWorld\Mods\Static Quality\Source\obj\Release\StaticQuality.dll
 D:\Games\Steam\steamapps\common\RimWorld\Mods\Static Quality\1.5\Assemblies\StaticQuality.dll
+D:\Games\Steam\steamapps\common\RimWorld\Mods\Static Quality\1.6\Assemblies\StaticQuality.dll
