@@ -35,6 +35,9 @@ namespace StaticQualityPlus
 
 		public static bool CraftNotify = false;
 		public static bool LegendaryRequiresInspiration = true;
+		public static bool VMEOverride = false;
+
+		public bool VMECompatibilityPatch = false;
 
 		public void DoWindowContents(Rect canvas)
 		{
@@ -65,6 +68,9 @@ namespace StaticQualityPlus
 
 			string text_li = "STAQ.LegendaryOnlyWithInspiration".Translate();
 			options.CheckboxLabeled(text_li, ref LegendaryRequiresInspiration, "STAQ.LegendaryWithInspirationEnabled".Translate());
+
+			string text_vme = "STAQ.VMEOverride".Translate();
+			options.CheckboxLabeled(text_vme, ref VMEOverride, "STAQ.VMEOverrideIs".Translate());
 
 			options.GapLine();
 			if (options.ButtonText("STAQ.Reset".Translate()))

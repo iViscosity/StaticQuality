@@ -1,45 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-    <STAQ.ItemQualityOptions>Item Quality Options</STAQ.ItemQualityOptions>
+  <STAQ.ItemQualityOptions>Item Quality Options</STAQ.ItemQualityOptions>
 
-    <STAQ.VanillaQuality>Vanilla quality</STAQ.VanillaQuality>
-    <STAQ.TheRimWorldDefault>Item quality is determined by the default RimWorld algorithm</STAQ.TheRimWorldDefault>
+  <STAQ.VanillaQuality>Vanilla quality</STAQ.VanillaQuality>
+  <STAQ.TheRimWorldDefault>Item quality is determined by the default RimWorld algorithm</STAQ.TheRimWorldDefault>
 
-    <STAQ.StaticQuality>Static quality</STAQ.StaticQuality>
-    <STAQ.ItemQualityIs>Item quality is based purely on Pawn skill level</STAQ.ItemQualityIs>
+  <STAQ.StaticQuality>Static quality</STAQ.StaticQuality>
+  <STAQ.ItemQualityIs>Item quality is based purely on Pawn skill level</STAQ.ItemQualityIs>
 
-    <STAQ.StaticQuality1>Static quality +/- 1</STAQ.StaticQuality1>
-    <STAQ.ItemQualityIs1>Item quality is based on Pawn skill level +/- 1 quality level</STAQ.ItemQualityIs1>
+  <STAQ.StaticQuality1>Static quality +/- 1</STAQ.StaticQuality1>
+  <STAQ.ItemQualityIs1>Item quality is based on Pawn skill level +/- 1 quality level</STAQ.ItemQualityIs1>
 
-    <STAQ.StaticQuality2>Static quality +/- 2</STAQ.StaticQuality2>
-    <STAQ.ItemQualityIs2>Item quality is based on Pawn skill level +/- 2 quality levels</STAQ.ItemQualityIs2>
+  <STAQ.StaticQuality2>Static quality +/- 2</STAQ.StaticQuality2>
+  <STAQ.ItemQualityIs2>Item quality is based on Pawn skill level +/- 2 quality levels</STAQ.ItemQualityIs2>
 
-    <STAQ.ThresholdSettings>Threshold Settings</STAQ.ThresholdSettings>
+  <STAQ.VMEOverride>Vanilla Ideologies Expanded Override</STAQ.VMEOverride>
+  <STAQ.VMEOverrideIs>
+    Allows the "Crafting Quality Increased" meme from Vanilla Ideologies Expanded to create Legendary quality items even if uninspired.
+    Does nothing if "Legendary Requires Inspiration" is off.
+  </STAQ.VMEOverrideIs>
 
-    <STAQ.RequiredStatPoor>Poor Threshold: {0}</STAQ.RequiredStatPoor>
+  <STAQ.ThresholdSettings>Threshold Settings</STAQ.ThresholdSettings>
 
-    <STAQ.RequiredStatNormal>Normal Threshold: {0}</STAQ.RequiredStatNormal>
+  <STAQ.RequiredStatPoor>Poor Threshold: {0}</STAQ.RequiredStatPoor>
 
-    <STAQ.RequiredStatGood>Good Threshold: {0}</STAQ.RequiredStatGood>
+  <STAQ.RequiredStatNormal>Normal Threshold: {0}</STAQ.RequiredStatNormal>
 
-    <STAQ.RequiredStatExcellent>Excellent Threshold: {0}</STAQ.RequiredStatExcellent>
+  <STAQ.RequiredStatGood>Good Threshold: {0}</STAQ.RequiredStatGood>
 
-    <STAQ.RequiredStatMasterwork>Masterwork Threshold: {0}</STAQ.RequiredStatMasterwork>
+  <STAQ.RequiredStatExcellent>Excellent Threshold: {0}</STAQ.RequiredStatExcellent>
 
-    <STAQ.RequiredStatLegendary>Legendary Threshold: {0}</STAQ.RequiredStatLegendary>
+  <STAQ.RequiredStatMasterwork>Masterwork Threshold: {0}</STAQ.RequiredStatMasterwork>
 
-    <STAQ.CheatQuality>Cheat Quality</STAQ.CheatQuality>
-    <STAQ.CheatQualityIs>Item quality is always Legendary. Still obeys Inspiration settings</STAQ.CheatQualityIs>
+  <STAQ.RequiredStatLegendary>Legendary Threshold: {0}</STAQ.RequiredStatLegendary>
 
-    <STAQ.MiscellaneousSettingsLabel>Miscellaneous Settings</STAQ.MiscellaneousSettingsLabel>
+  <STAQ.CheatQuality>Cheat Quality</STAQ.CheatQuality>
+  <STAQ.CheatQualityIs>Item quality is always Legendary. Still obeys Inspiration settings</STAQ.CheatQualityIs>
 
-    <STAQ.CraftingNotification>Crafting notifications</STAQ.CraftingNotification>
-    <STAQ.CraftingEnabled>Whether or not crafting notifications on Masterwork/Legendary items is
-        enabled</STAQ.CraftingEnabled>
+  <STAQ.MiscellaneousSettingsLabel>Miscellaneous Settings</STAQ.MiscellaneousSettingsLabel>
 
-    <STAQ.LegendaryOnlyWithInspiration>Legendary Requires Inspiration</STAQ.LegendaryOnlyWithInspiration>
-    <STAQ.LegendaryWithInspirationEnabled>Whether or not Legendary items can only be created with
-        inspiration</STAQ.LegendaryWithInspirationEnabled>
+  <STAQ.CraftingNotification>Crafting notifications</STAQ.CraftingNotification>
+  <STAQ.CraftingEnabled>
+    Whether or not crafting notifications on Masterwork/Legendary items is
+    enabled
+  </STAQ.CraftingEnabled>
 
-    <STAQ.Reset>Reset to Default</STAQ.Reset>
+  <STAQ.LegendaryOnlyWithInspiration>Legendary Requires Inspiration</STAQ.LegendaryOnlyWithInspiration>
+  <STAQ.LegendaryWithInspirationEnabled>
+    Whether or not Legendary items can only be created with
+    inspiration
+  </STAQ.LegendaryWithInspirationEnabled>
+
+  <STAQ.Reset>Reset to Default</STAQ.Reset>
 </LanguageData>

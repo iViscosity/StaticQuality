@@ -79,11 +79,15 @@ namespace StaticQualityPlus
 			else if (quality >= 6)
 			{
 				if (Settings.LegendaryRequiresInspiration && !inspired)
-					quality = 5;
+				{
+					// The "Crafting Quality Increased" meme adds +1 to the quality of
+					// any item created after the quality is determined by Static Quality.
+					// This preemptively reduces the quality by 1 to account for that.
+					quality = (StaticQuality.Settings.VMECompatibilityPatch && !Settings.VMEOverride) ? 4 : 5;
+				}
 				else
 					quality = 6;
 			}
-
 
 			__result = (QualityCategory)quality;
 

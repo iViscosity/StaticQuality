@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Manifest>
+  <identifier>StaticQuality</identifier>
+  <version>1.1</version>
+  <dependencies>
+    <li>Harmony</li>
+  </dependencies>
+  <loadAfter>
+    <li>Vanilla Ideology Expanded - Memes and Structures</li>
+  </loadAfter>
+  <showCrossPromotions>true</showCrossPromotions>
+  <manifestUri>https://raw.githubusercontent.com/iViscosity/StaticQuality/main/About/Manifest.xml</manifestUri>
+  <downloadUri>https://github.com/iViscosity/StaticQuality/</downloadUri>
+</Manifest>
