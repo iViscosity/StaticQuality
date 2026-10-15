@@ -16,88 +16,86 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-using RimWorld;
-using System;
-using Verse;
 using HarmonyLib;
+using RimWorld;
 
 namespace StaticQualityPlus
 {
-	[HarmonyPatch(typeof(QualityUtility), nameof(QualityUtility.GenerateQualityCreatedByPawn), new Type[] { typeof(int), typeof(bool) })]
-	[HarmonyPriority(Priority.Last)]
-	class Patch_GenerateQualityCreatedByPawn
-	{
-		public static QualityCategory Postfix(QualityCategory __result, int relevantSkillLevel, bool inspired)
-		{
-			if (Settings.QualitySwitch == 0) // Do nothing
-				return __result;
+    [HarmonyPatch(typeof(QualityUtility), nameof(QualityUtility.GenerateQualityCreatedByPawn), new Type[] { typeof(int), typeof(bool) })]
+    [HarmonyPriority(Priority.Last)]
+    class Patch_GenerateQualityCreatedByPawn
+    {
+        public static QualityCategory Postfix(QualityCategory __result, int relevantSkillLevel, bool inspired)
+        {
+            if (Settings.QualitySwitch == 0) // Do nothing
+                return __result;
 
-			if (Settings.QualitySwitch == 4) // Cheat quality
-				if (Settings.LegendaryRequiresInspiration && !inspired) // Still respects Inspiration requirement.
-					return (QualityCategory)5;
-				else
-					return (QualityCategory)6;
+            if (Settings.QualitySwitch == 4) // Cheat quality
+                if (Settings.LegendaryRequiresInspiration && !inspired) // Still respects Inspiration requirement.
+                    return (QualityCategory)5;
+                else
+                    return (QualityCategory)6;
 
-			int quality = 0; // Default to "awful"
-			int mod = 0;
+            int quality = 0; // Default to "awful"
+            int mod = 0;
 
-			if (relevantSkillLevel >= Settings.LegendaryThreshold)
-			{
-				if (Settings.LegendaryRequiresInspiration && !inspired)
-					quality = 5;
-				else
-					quality = 6;
-			}
-			else if (relevantSkillLevel >= Settings.MasterworkThreshold)
-				quality = 5;
-			else if (relevantSkillLevel >= Settings.ExcellentThreshold)
-				quality = 4;
-			else if (relevantSkillLevel >= Settings.GoodThreshold)
-				quality = 3;
-			else if (relevantSkillLevel >= Settings.NormalThreshold)
-				quality = 2;
-			else if (relevantSkillLevel >= Settings.PoorThreshold)
-				quality = 1;
+            if (relevantSkillLevel >= Settings.LegendaryThreshold)
+            {
+                if (Settings.LegendaryRequiresInspiration && !inspired)
+                    quality = 5;
+                else
+                    quality = 6;
+            }
+            else if (relevantSkillLevel >= Settings.MasterworkThreshold)
+                quality = 5;
+            else if (relevantSkillLevel >= Settings.ExcellentThreshold)
+                quality = 4;
+            else if (relevantSkillLevel >= Settings.GoodThreshold)
+                quality = 3;
+            else if (relevantSkillLevel >= Settings.NormalThreshold)
+                quality = 2;
+            else if (relevantSkillLevel >= Settings.PoorThreshold)
+                quality = 1;
 
-			if (Settings.QualitySwitch > 1)
-			{
-				Random rng = new Random();
+            if (Settings.QualitySwitch > 1)
+            {
+                Random rng = new Random();
 
-				if (Settings.QualitySwitch == 3)
-					mod = rng.Next(-2, 3);
-				else
-					mod = rng.Next(-1, 2);
-			}
+                if (Settings.QualitySwitch == 3)
+                    mod = rng.Next(-2, 3);
+                else
+                    mod = rng.Next(-1, 2);
+            }
 
-			quality += mod;
+            quality += mod;
 
-			if (inspired) // Creative inspiration increases the quality by 2
-				quality += 2;
+            if (inspired) // Creative inspiration increases the quality by 2
+                quality += 2;
 
-			if (quality < 0)
-				quality = 0;
-			else if (quality >= 6)
-			{
-				if (Settings.LegendaryRequiresInspiration && !inspired)
-				{
-					// The "Crafting Quality Increased" meme adds +1 to the quality of
-					// any item created after the quality is determined by Static Quality.
-					// This preemptively reduces the quality by 1 to account for that.
-					quality = (StaticQuality.Settings.VMECompatibilityPatch && !Settings.VMEOverride) ? 4 : 5;
-				}
-				else
-					quality = 6;
-			}
+            if (quality < 0)
+                quality = 0;
+            else if (quality >= 6)
+            {
+                if (Settings.LegendaryRequiresInspiration && !inspired)
+                {
+                    // The "Crafting Quality Increased" meme adds +1 to the quality of
+                    // any item created after the quality is determined by Static Quality.
+                    // This preemptively reduces the quality by 1 to account for that.
+                    quality = (StaticQuality.Settings.VMECompatibilityPatch && !Settings.VMEOverride) ? 4 : 5;
+                }
+                else
+                    quality = 6;
+            }
 
-			__result = (QualityCategory)quality;
+            __result = (QualityCategory)quality;
 
-			return __result;
-		}
-	}
+            return __result;
+        }
+    }
 
-	[HarmonyPatch(typeof(QualityUtility), nameof(QualityUtility.SendCraftNotification))]
-	class Path_SendCraftNotification
-	{
-		public static bool Prefix() => Settings.CraftNotify;
-	}
+    [HarmonyPatch(typeof(QualityUtility), nameof(QualityUtility.SendCraftNotification))]
+    class Path_SendCraftNotification
+    {
+        public static bool Prefix() => Settings.CraftNotify;
+    }
 }

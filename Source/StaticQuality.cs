@@ -16,32 +16,32 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-using Verse;
-using UnityEngine;
 using HarmonyLib;
+using UnityEngine;
+using Verse;
 
 namespace StaticQualityPlus
 {
-	public class StaticQuality : Mod
-	{
-		public static Settings Settings;
+    public class StaticQuality : Mod
+    {
+        public static Settings Settings;
 
-		public StaticQuality(ModContentPack content) : base(content)
-		{
-			new Harmony("vis.rimworld.Static_Quality.main").PatchAll();
-			Settings = GetSettings<Settings>();
-		}
+        public StaticQuality(ModContentPack content) : base(content)
+        {
+            new Harmony("vis.rimworld.Static_Quality.main").PatchAll();
+            Settings = GetSettings<Settings>();
+        }
 
-		public void Save()
-		{
-			LoadedModManager.GetMod<StaticQuality>().GetSettings<Settings>().Write();
-		}
+        public void Save()
+        {
+            LoadedModManager.GetMod<StaticQuality>().GetSettings<Settings>().Write();
+        }
 
-		public override string SettingsCategory() => "Static Quality";
+        public override string SettingsCategory() => "Static Quality";
 
-		public override void DoSettingsWindowContents(Rect canvas)
-		{
-			Settings.DoWindowContents(canvas);
-		}
-	}
+        public override void DoSettingsWindowContents(Rect canvas)
+        {
+            Settings.DoWindowContents(canvas);
+        }
+    }
 }
